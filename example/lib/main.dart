@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/src/otp_screen.dart';
+import 'package:poker_otp/poker_otp.dart';
 
 void main() {
   runApp(const MyApp());
