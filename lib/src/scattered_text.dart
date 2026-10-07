@@ -69,16 +69,15 @@ class _ScatteredTextState extends State<ScatteredText> {
         final rotation = isScattered ? _randomRotations[index] : 0.0;
 
         return AnimatedContainer(
-          duration: const Duration(milliseconds: 800), // Speed of the throw/rearrange
+          duration: const Duration(
+            milliseconds: 800,
+          ), // Speed of the throw/rearrange
           curve: Curves.easeInOutCubic,
           transformAlignment: Alignment.center,
           transform: Matrix4.identity()
             ..translate(offset.dx, offset.dy)
             ..rotateZ(rotation),
-          child: Text(
-            char,
-            style: widget.textStyle,
-          ),
+          child: Text(char, style: widget.textStyle),
         );
       }),
     );

@@ -31,11 +31,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: LoginScreen()
+      home: LoginScreen(),
     );
   }
 }
-
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -57,13 +56,17 @@ class LoginScreen extends StatelessWidget {
 
                   onVerify: (otp) async {
                     // 1. Just check the code here. Do NOT navigate here.
-                    await Future.delayed(const Duration(seconds: 2)); // simulate network
+                    await Future.delayed(
+                      const Duration(seconds: 2),
+                    ); // simulate network
                     return otp == "1234"; // Returns true/false
                   },
 
                   onSuccess: () {
                     // 2. This triggers EXACTLY when the green checkmark is done showing!
-                    Navigator.pop(context); // Or Navigator.pushReplacement to Home
+                    Navigator.pop(
+                      context,
+                    ); // Or Navigator.pushReplacement to Home
                   },
                 ),
               ),
@@ -75,4 +78,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-

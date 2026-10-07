@@ -34,8 +34,8 @@ class PokerOtpField extends StatefulWidget {
     this.inactiveBorderColor = const Color(0xFF2A2A3C),
     this.cardBackgroundColor = const Color(0xFF181825),
     this.onSuccess, // 2. Add this line
-  })  : assert(length == 4 || length == 6, 'Length must be 4 or 6'),
-        super(key: key);
+  }) : assert(length == 4 || length == 6, 'Length must be 4 or 6'),
+       super(key: key);
 
   @override
   State<PokerOtpField> createState() => _PokerOtpFieldState();
@@ -62,12 +62,30 @@ class _PokerOtpFieldState extends State<PokerOtpField>
   void initState() {
     super.initState();
 
-    _stackController = AnimationController(vsync: this, duration: const Duration(milliseconds: 350));
-    _circleController = AnimationController(vsync: this, duration: const Duration(milliseconds: 350));
-    _spinController = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200));
-    _fanController = AnimationController(vsync: this, duration: const Duration(milliseconds: 400));
-    _shakeController = AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
-    _successPopController = AnimationController(vsync: this, duration: const Duration(milliseconds: 400));
+    _stackController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 350),
+    );
+    _circleController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 350),
+    );
+    _spinController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+    _fanController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+    );
+    _shakeController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    _successPopController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+    );
   }
 
   @override
@@ -195,7 +213,10 @@ class _PokerOtpFieldState extends State<PokerOtpField>
           ),
 
           AnimatedBuilder(
-            animation: Listenable.merge([_shakeController, _successPopController]),
+            animation: Listenable.merge([
+              _shakeController,
+              _successPopController,
+            ]),
             builder: (context, child) {
               double shakeOffset = 0.0;
               if (_state == OtpState.error) {
@@ -237,16 +258,20 @@ class _PokerOtpFieldState extends State<PokerOtpField>
       ]),
       builder: (context, _) {
         final double centerIndex = (widget.length - 1) / 2;
-        final double cardTotalWidth = widget.cardWidth + (_horizontalMargin * 2);
+        final double cardTotalWidth =
+            widget.cardWidth + (_horizontalMargin * 2);
         final double distanceToCenter = (index - centerIndex) * cardTotalWidth;
 
         final double dxToCenter = -distanceToCenter * _stackController.value;
 
-        final double circleAngle = index * (2 * pi / widget.length) * _circleController.value;
+        final double circleAngle =
+            index * (2 * pi / widget.length) * _circleController.value;
         final double continuousSpin = _spinController.value * pi * 2;
-        final double fanAngle = (index - centerIndex) * widget.fanSpread * _fanController.value;
+        final double fanAngle =
+            (index - centerIndex) * widget.fanSpread * _fanController.value;
 
-        final double totalRotationZ = circleAngle + fanAngle + (continuousSpin * _circleController.value);
+        final double totalRotationZ =
+            circleAngle + fanAngle + (continuousSpin * _circleController.value);
         final double circleRadius = widget.spinRadius * _circleController.value;
         final double pivotY = (widget.cardHeight / 2.2) * _fanController.value;
 
@@ -283,7 +308,8 @@ class _PokerOtpFieldState extends State<PokerOtpField>
     // Determine fill color
     Color bgColor = widget.cardBackgroundColor;
     if (isSuccess) bgColor = widget.successColor;
-    if (isError && isStacked) bgColor = widget.errorColor; // Fill red when stacked
+    if (isError && isStacked)
+      bgColor = widget.errorColor; // Fill red when stacked
 
     final double textOpacity = (1.0 - _stackController.value).clamp(0.0, 1.0);
 
@@ -295,10 +321,7 @@ class _PokerOtpFieldState extends State<PokerOtpField>
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(12.0),
-        border: Border.all(
-          color: showIcon ? bgColor : borderColor,
-          width: 2,
-        ),
+        border: Border.all(color: showIcon ? bgColor : borderColor, width: 2),
         boxShadow: [
           if (isGlowing)
             BoxShadow(
@@ -327,22 +350,13 @@ class _PokerOtpFieldState extends State<PokerOtpField>
 
           // The True Mark
           if (isSuccess)
-            const Icon(
-              Icons.check_rounded,
-              color: Colors.white,
-              size: 34,
-            ),
+            const Icon(Icons.check_rounded, color: Colors.white, size: 34),
 
           // The False Mark
           if (isError && isStacked)
-            const Icon(
-              Icons.close_rounded,
-              color: Colors.white,
-              size: 34,
-            ),
+            const Icon(Icons.close_rounded, color: Colors.white, size: 34),
         ],
       ),
     );
   }
-
 }

@@ -23,7 +23,11 @@ class PokerOtpScreen extends StatefulWidget {
     required this.onVerify,
     this.length = 4,
     this.backgroundColor = const Color(0xFF0F0F1A),
-    this.titleStyle = const TextStyle(fontSize: 32, color: Colors.white, fontWeight: FontWeight.bold),
+    this.titleStyle = const TextStyle(
+      fontSize: 32,
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+    ),
     this.subtitleStyle = const TextStyle(fontSize: 16, color: Colors.white70),
     this.resendText = "Didn't get a code?",
     this.onResend,
@@ -78,10 +82,7 @@ class _PokerOtpScreenState extends State<PokerOtpScreen> {
               textStyle: widget.subtitleStyle,
             ),
             const SizedBox(height: 64),
-            PokerOtpField(
-              length: widget.length,
-              onVerify: _handleVerify,
-            ),
+            PokerOtpField(length: widget.length, onVerify: _handleVerify),
             const SizedBox(height: 48),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 300),
@@ -97,7 +98,10 @@ class _PokerOtpScreenState extends State<PokerOtpScreen> {
                     onPressed: _isChecking ? null : widget.onResend,
                     child: const Text(
                       "Resend",
-                      style: TextStyle(color: Color(0xFF6366F1), fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        color: Color(0xFF6366F1),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
