@@ -1,13 +1,13 @@
-Markdown# Poker OTP 🃏
+# Poker OTP 🃏
 
 A highly animated, casino-dealer style OTP (One-Time Password) verification package for Flutter. `poker_otp` utilizes complex `Matrix4` 3D transformations to create a fluid, multi-stage choreography that mimics dealing, checking, and validating a hand of cards.
 
 ### Animations Demo
 
 <p align="center">
-  <img src="https://github.com/YousefGamal7/poker_otp/blob/master/doc/demo.gif?raw=true" width="250" alt="Success Animation" />
+  <img src="https://raw.githubusercontent.com/YousefGamal7/poker_otp/master/doc/demo.gif" width="250" alt="Success Animation" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/YousefGamal7/poker_otp/blob/master/doc/wrong.gif?raw=true" width="250" alt="Error Animation" />
+  <img src="https://raw.githubusercontent.com/YousefGamal7/poker_otp/master/doc/wrong.gif" width="250" alt="Error Animation" />
 </p>
 
 ## ✨ Features
