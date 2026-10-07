@@ -5,9 +5,9 @@ A highly animated, casino-dealer style OTP (One-Time Password) verification pack
 ### Animations Demo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YousefGamal7/poker_otp/main/doc/demo.gif" width="250" alt="Success Animation" />
+  <img src="https://github.com/YousefGamal7/poker_otp/blob/master/doc/demo.gif?raw=true" width="250" alt="Success Animation" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/YousefGamal7/poker_otp/main/doc/wrong.gif" width="250" alt="Error Animation" />
+  <img src="https://github.com/YousefGamal7/poker_otp/blob/master/doc/wrong.gif?raw=true" width="250" alt="Error Animation" />
 </p>
 
 ## ✨ Features
