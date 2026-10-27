@@ -5,12 +5,14 @@ A highly animated, casino-dealer style OTP (One-Time Password) verification pack
 ### Animations Demo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YousefGamal7/poker_otp/master/doc/demo.gif" width="250" alt="Success Animation" />
+  <img src=[success.webm](https://github.com/user-attachments/assets/6e310fff-7066-49dd-bfc0-7cb27a4ba773)
+ width="250" alt="Success Animation" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/YousefGamal7/poker_otp/master/doc/wrong.gif" width="250" alt="Error Animation" />
+  <img src=[untitled.webm](https://github.com/user-attachments/assets/587ce052-be17-427d-9dc9-3c2064bcf7b0) width="250" alt="Error Animation" />
 </p>
 
 ## ✨ Features
+
 
 * **Multi-Stage Choreography:**
   * **Loading:** Cards slide into a center stack, push outward, and continuously spin in a 3D hollow ring.
